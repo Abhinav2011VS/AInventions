@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel = "icon" href="favicon.png" type="image/x-icon">
-  <title>Login/Sign Up</title>
+  <title>Login Page</title>
   <style>
     body {
         margin: 0;
@@ -62,6 +61,9 @@
         background-color: #007bff;
         color: white;
         cursor: pointer;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
     }
 
     .toggle-button:hover {
@@ -75,32 +77,6 @@
   </style>
 </head>
 <body>
-<nav class="navbar background">
-  <ul class="nav-list">
-    <div><a href="https://ainventions.pages.dev"><img src="data/logo.png" style="width:80px;height:50px;"></a></div>
-    <div class="dropdown" style="float:right;">
-      <button class="dropbtn"><lmn>AI</lmn></button>
-      <div class="dropdown-content" style="left:0;">
-        <a href="https://ainventions.pages.dev/ai/times/ultra/">Times Ultra</a>
-        <a href="https://ainventions.pages.dev/ai/times/plus/">Times Plus</a>
-        <a href="https://ainventions.pages.dev/ai/times/normal/">Times</a>
-      </div>
-    </div>
-    <div class="dropdown" style="float:left;">
-      <button class="dropbtn"><lmn>Program Languages</lmn></button>
-      <div class="dropdown-content" style="left:0;">
-        <a href="https://ainventions.pages.dev/learn/programming/webtechnology/">Web Technology</a>
-        <a href="https://ainventions.pages.dev/learn/programming/cprogramming/">C Programming</a>
-        <a href="https://ainventions.pages.dev/learn/programming/java/">Java</a>
-      </div>
-    </div>
-    <li><a href="https://ainventions.pages.dev/learn/">Learn</a></li>
-  </ul>
-
-  <ul class="rightNav">
-    <li><a href="https://ainventions.pages.dev/login/"><lmno>Login/Sign Up</lmno></a></li>
-  </ul>
-</nav>
 <div class="container">
   <form id="login-form" class="login-form" onsubmit="return validateLogin()" method="post">
     <h2>Login</h2>
@@ -108,17 +84,17 @@
     <input type="password" name="password" id="password" placeholder="Password" required>
     <input type="submit" value="Login">
     <div class="error-message" id="login-error-message">Username or Password is incorrect</div>
-    <div class="toggle-button" onclick="toggleForms()">Don't have an account? Sign Up</div>
   </form>
   <form id="signup-form" class="signup-form" onsubmit="return signUp()" method="post">
     <h2>Sign Up</h2>
     <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+    <input type="text" name="username" id="signup-username" placeholder="Username" required>
     <input type="text" name="email" id="signup-email" placeholder="Email" required>
     <input type="password" name="password" id="signup-password" placeholder="Password" required>
     <input type="submit" value="Sign Up">
     <div class="error-message" id="signup-error-message">Error signing up</div>
-    <div class="toggle-button" onclick="toggleForms()">Have an account? Login</div>
   </form>
+  <div class="toggle-button" onclick="toggleForms()">Don't have an account? Sign Up</div>
 </div>
 
 <script>
@@ -143,6 +119,7 @@
   function signUp() {
       var fullname = document.getElementById('fullname').value;
       var email = document.getElementById('signup-email').value;
+      var username = document.getElementById('signup-username').value;
       var password = document.getElementById('signup-password').value;
 
       // For demonstration purposes, assume successful signup
@@ -159,6 +136,12 @@
           loginForm.style.display = 'block';
           signupForm.style.display = 'none';
           toggleButton.textContent = "Don't have an account? Sign Up";
+      } else {
+          loginForm.style.display = 'none';
+          signupForm.style.display = 'block';
+          toggleButton.textContent = "Have an account? Login";
+      }
+  }
 </script>
 </body>
 </html>

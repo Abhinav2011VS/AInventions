@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glitch Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .glitch {
+      display: inline-block;
+      color: #00ff00;
+      font-size: 36px;
+      font-weight: bold;
+      animation: glitch-animation 1s 1s linear alternate-reverse;
+    }
+
+    @keyframes glitch-animation {
+      0% {
+        transform: none;
+        opacity: 1;
+      }
+      25% {
+        transform: translate(2px, -2px);
+        opacity: 0.8;
+      }
+      50% {
+        transform: translate(-2px, 2px);
+        opacity: 0.6;
+      }
+      75% {
+        transform: translate(2px, 2px);
+        opacity: 0.8;
+      }
+      100% {
+        transform: none;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container" id="intro">
+  <div class="glitch">Your Logo Co.</div>
+  <div class="glitch">Powered By XYZ</div>
+</div>
+<script>
+  // Wait for 5 seconds before starting the animation
+  setTimeout(() => {
+    // Add animation class to glitch elements after 5 seconds
+    document.querySelectorAll('.glitch').forEach(el => {
+      el.classList.add('glitch-animation');
+    });
+  }, 5000);
+</script>
+</body>
+</html>

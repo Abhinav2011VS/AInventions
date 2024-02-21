@@ -17,18 +17,18 @@
 
         a {
             text-decoration:none;
-            font-family: arial;
+            font-family: arial,serif;
             font-size: 16px;
         }
 
         c {
             text-decoration:none;
-            font-family: arial;
+            font-family: arial,serif;
             font-size: 16px;
         }
 
         body {
-            background-image: url('HomeBack.jpg');
+            background-image: url('/pictures/homeback.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -59,7 +59,7 @@
             right: 0;
             background-color: black;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
             z-index: 1;
         }
 
@@ -260,22 +260,30 @@
 </head>
 <body>
 <nav class="navbar background">
-    <ul class="nav-list">
-        <div><a href="../../../index.html"><img src="../../../data/logo.png" style="width:80px;height:50px;"></a> </div>
-        <div class="dropdown" style="float:left;">
-            <button class="dropbtn"><a href="../index.html"><lmn>Program Languages</lmn></a></button>
-            <div class="dropdown-content" style="left:0;">
-                <a href="index.html">Web Technology</a>
-                <a href="../cprogramming/index.html">C Programming</a>
-                <a href="../java/index.html">Java</a>
-            </div>
-        </div>
-        <li><a href="../../index.html">Learn</a></li>
-    </ul>
+  <ul class="nav-list">
+    <div><a href="/index.html/"><img src="/data/logo.png" style="width:80px;height:50px;"></a></div>
+    <div class="dropdown" style="float:right;">
+      <button class="dropbtn"><lmn>AI</lmn></button>
+      <div class="dropdown-content" style="left:0;">
+        <a href="/ai/times/ultra/">Times Ultra</a>
+        <a href="/ai/times/plus/">Times Plus</a>
+        <a href="/ai/times/normal/">Times</a>
+      </div>
+    </div>
+    <div class="dropdown" style="float:left;">
+      <button class="dropbtn"><lmn>Program Languages</lmn></button>
+      <div class="dropdown-content" style="left:0;">
+        <a href="/learn/programming/webtechnology/">Web Technology</a>
+        <a href="/learn/programming/cprogramming/">C Programming</a>
+        <a href="https://ainventions.pages.dev/learn/programming/java/">Java</a>
+      </div>
+    </div>
+    <li><a href="/learn/">Learn</a></li>
+  </ul>
 
-    <ul class="rightNav">
-        <li><a href="Login.html"><lmno>Login</lmno></a></li>
-    </ul>
+  <ul class="rightNav">
+    <li><a href="/login/"><lmno>Login/Sign Up</lmno></a></li>
+  </ul>
 </nav>
 </body>
 </html>

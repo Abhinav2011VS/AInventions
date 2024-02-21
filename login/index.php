@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     body {
-      background-image: url('Pictures/HomeBack.jpg');
+      background-image: url('../pictures/homeback.jpg');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
